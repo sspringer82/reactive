@@ -25,8 +25,9 @@ const messages = interval(10).pipe(
 messages
   .pipe(
     withLatestFrom(t),
-    take(10)
+    take(10),
+    map(([v1, v2]) => `${v1} ${v2}`)
   )
   .subscribe(v => {
-    console.log(v[1] + ' ' + v[0]);
+    console.log(v);
   });
