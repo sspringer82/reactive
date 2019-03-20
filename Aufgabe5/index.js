@@ -15,7 +15,7 @@ const strings = ['bla', 'blubb', 'foo', 'bar', 'baz'];
 
 const messages = interval(10).pipe(
   filter(v => {
-    return v % Math.floor(Math.random() * 5) === 0;
+    return v % Math.floor(Math.random() * 1000) === 0;
   }),
   map(() => {
     return strings[Math.floor(Math.random() * strings.length)];
